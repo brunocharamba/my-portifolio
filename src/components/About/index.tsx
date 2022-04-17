@@ -6,8 +6,6 @@ const buttonStyle = "p-2 border text-right text-sm cursor-pointer hover:bg-gray-
 const About: React.FC<ComponentProps> = (props) => {
   const { isMobile } = props;
 
-  console.log(isMobile);
-
   const getYear = () => {
     const today = new Date();
     const birth = new Date(1989, 2, 1);
@@ -47,7 +45,7 @@ const About: React.FC<ComponentProps> = (props) => {
         <div className={buttonStyle} onClick={() => window.open("mailto:brunocharamba@gmail.com")}>
           SEND EMAIL
         </div>
-        <div className={buttonStyle} onClick={() => console.log("download resume")}>
+        <div className={buttonStyle}>
           <a href="/bruno_resume.pdf">DOWNLOAD RESUME</a>
         </div>
       </div>
