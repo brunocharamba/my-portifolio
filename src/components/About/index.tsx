@@ -1,10 +1,13 @@
 import React from "react";
-
-// import { Container } from './styles';
+import { ComponentProps } from "../types";
 
 const buttonStyle = "p-2 border text-right text-sm cursor-pointer hover:bg-gray-600 hover:text-gray-100";
 
-const About: React.FC = () => {
+const About: React.FC<ComponentProps> = (props) => {
+  const { isMobile } = props;
+
+  console.log(isMobile);
+
   const getYear = () => {
     const today = new Date();
     const birth = new Date(1989, 2, 1);
@@ -16,7 +19,7 @@ const About: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center w-2/5 mb-4">
+    <div className={`flex flex-col justify-center mb-4 w-1/2 ${isMobile && "w-full"}`}>
       {/* About title */}
       <div className="flex-col text-right">
         <div className="text-lg font-bold">about me</div>
@@ -38,14 +41,14 @@ const About: React.FC = () => {
       </div>
       {/* Button wrapper */}
       <div className="flex flex-row justify-end mt-4 gap-4">
-        <div className={buttonStyle} onClick={() => window.open("https://github.com/brunocharamba", "_blank")}>
-          GITHUB
+        <div className={buttonStyle} onClick={() => window.open("https://www.linkedin.com/in/bruno-charamba/", "_blank")}>
+          LINKEDIN
         </div>
         <div className={buttonStyle} onClick={() => window.open("mailto:brunocharamba@gmail.com")}>
           SEND EMAIL
         </div>
         <div className={buttonStyle} onClick={() => console.log("download resume")}>
-          DOWNLOAD RESUME
+          <a href="/bruno_resume.pdf">DOWNLOAD RESUME</a>
         </div>
       </div>
     </div>

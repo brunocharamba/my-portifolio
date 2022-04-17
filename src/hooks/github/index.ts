@@ -11,8 +11,8 @@ const useRepositories = () => {
   return useQuery<IRepository[]>(
     "repositories",
     async () => {
-      const response = await api.get("/users/brunocharamba/repos?type=owner");
-      return response.data;
+      const { data } = await api.get<IRepository[]>("/users/brunocharamba/repos?type=owner");
+      return data;
     },
     options
   );

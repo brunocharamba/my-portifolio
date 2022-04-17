@@ -6,9 +6,11 @@ import About from "../components/About";
 import Experience from "../components/Experience";
 import Skills from "../components/Skills";
 import Github from "../components/Github";
+import { PageProps } from "../components/types";
+import { getSelectorsByUserAgent } from "react-device-detect";
 
-const Home: NextPage = () => {
-  const buttonStyle = "py-2 px-4 cursor-pointer select-none transition ease-in-out hover:bg-red-400 ";
+const Home: NextPage<PageProps> = ({ userAgent }) => {
+  const { isMobile } = userAgent && getSelectorsByUserAgent(userAgent);
 
   return (
     <div>
@@ -23,8 +25,8 @@ const Home: NextPage = () => {
       </header>
 
       <main className="flex flex-col items-end px-6 py-4">
-        <About />
-        <Experience />
+        <About isMobile={isMobile} />
+        <Experience isMobile={isMobile} />
         <Skills />
         <Github />
       </main>
@@ -39,6 +41,11 @@ const Home: NextPage = () => {
       </footer> */}
     </div>
   );
+};
+
+Home.getInitialProps = async ({ req }) => {
+  const userAgent = req ? req.headers["user-agent"] : navigator.userAgent;
+  return { userAgent };
 };
 
 export default Home;

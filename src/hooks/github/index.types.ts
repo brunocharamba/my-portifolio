@@ -6,4 +6,5 @@ export interface IRepository {
   language: string;
   forks: number;
   html_url: string;
+  updated_at: Date;
 }

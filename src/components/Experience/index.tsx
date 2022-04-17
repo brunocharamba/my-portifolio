@@ -76,12 +76,13 @@ const baseEducation: IExperience[] = [
 
 const columnStyle = "flex flex-0.5 text-right";
 
-const Experience: React.FC<ExperiencesProps> = () => {
+const Experience: React.FC<ExperiencesProps> = (props) => {
   const [experiences, setExperiences] = React.useState<IExperience[]>(baseExperiences);
   const [education, setEducation] = React.useState<IExperience[]>(baseEducation);
+  const { isMobile } = props;
 
   return (
-    <div className="flex flex-row justify-end p-4 mb-4 gap-4">
+    <div className={`flex flex-row justify-end p-4 mb-4 gap-4 ${isMobile && "flex-col-reverse"}`}>
       <ExperienceColumn title="education" items={education} />
       <ExperienceColumn title="experience" items={experiences} />
     </div>

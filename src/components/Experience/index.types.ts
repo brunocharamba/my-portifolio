@@ -1,4 +1,6 @@
-export interface ExperiencesProps {}
+import { ComponentProps } from "../types";
+
+export interface ExperiencesProps extends ComponentProps {}
 
 export interface ExperiencesColumnProps {
   title: string;
