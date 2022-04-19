@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           </div>
         </div>
         {/* title */}
-        <a className="text-lg cursor-pointer text-ellipsis z-10 text-gray-200" href={content.url} target="_blank">
+        <a className="text-lg cursor-pointer text-ellipsis z-10 text-gray-200" href={content.url} target="_blank" rel="noreferrer">
           {content.title}
         </a>
       </div>
