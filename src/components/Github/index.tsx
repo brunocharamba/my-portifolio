@@ -15,7 +15,7 @@ const Github: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-1 flex-col justify-end px-2 mb-4 text-right">
+    <div className="flex flex-1 flex-col justify-end mb-4 text-right">
       {/* title */}
       <div className="flex flex-1 flex-row justify-end text-right">
         <div className="text-lg font-bold text-right cursor-pointer" onClick={() => window.open("https://github.com/brunocharamba/", "_blank")}>

@@ -10,7 +10,7 @@ const Skills: React.FC<SkillsProps> = () => {
   const [backend, setBackend] = React.useState<string[]>(baseBackend);
 
   return (
-    <div className="flex flex-1 flex-col justify-end px-2 mb-4 text-right">
+    <div className="flex flex-1 flex-col justify-end mb-4 text-right">
       {/* title */}
       <div className="flex flex-1 flex-row justify-end text-right">
         <div className="text-lg font-bold text-right">skills</div>

@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Header from "../components/Header";
 import About from "../components/About";
 import Experience from "../components/Experience";
 import Skills from "../components/Skills";
 import Github from "../components/Github";
-import { PageProps } from "../components/types";
+import { PageProps } from "../types";
 import { getSelectorsByUserAgent } from "react-device-detect";
+import Projects from "../components/Projects";
 
 const Home: NextPage<PageProps> = ({ userAgent }) => {
   const { isMobile } = userAgent && getSelectorsByUserAgent(userAgent);
@@ -28,6 +28,7 @@ const Home: NextPage<PageProps> = ({ userAgent }) => {
         <About isMobile={isMobile} />
         <Experience isMobile={isMobile} />
         <Skills />
+        <Projects />
         <Github />
       </main>
 
