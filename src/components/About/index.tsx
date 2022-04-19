@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentProps } from "../types";
+import { ComponentProps } from "../../types";
 
 const buttonStyle = "p-2 border text-right text-sm cursor-pointer hover:bg-gray-600 hover:text-gray-100";
 

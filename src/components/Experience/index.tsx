@@ -82,7 +82,7 @@ const Experience: React.FC<ExperiencesProps> = (props) => {
   const { isMobile } = props;
 
   return (
-    <div className={`flex flex-row justify-end p-4 mb-4 gap-4 ${isMobile && "flex-col-reverse"}`}>
+    <div className={`flex flex-row justify-end mb-4 gap-4 ${isMobile && "flex-col-reverse"}`}>
       <ExperienceColumn title="education" items={education} />
       <ExperienceColumn title="experience" items={experiences} />
     </div>

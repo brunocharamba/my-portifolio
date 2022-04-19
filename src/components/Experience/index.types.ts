@@ -1,4 +1,4 @@
-import { ComponentProps } from "../types";
+import { ComponentProps } from "../../types";
 
 export interface ExperiencesProps extends ComponentProps {}
 
